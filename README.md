@@ -1,4 +1,4 @@
-### Automate AWS Infrastructure
+### Modularize Project
 
 ### Technologies used:
 
@@ -6,13 +6,13 @@ Terraform, AWS, Docker, Linux, Git
 
 ### Project Description:
 
-1-Create TF project to automate provisioning AWS Infrastructure and its components, such as: VPC, Subnet, Route Table, Internet Gateway, EC2, Security Group.
-
-2-Configure TF script to automate deploying Docker container to EC2 instance
+1-Divide Terraform resources into reusable modules
 
 ### Instruction:
 
-1-Create a terraform.tfvars file under the root of the current folder with the following variables
+1-Create subnet and webserver module under the modules folder and divide terraform resources into the two modules
+
+2-Create a terraform.tfvars file under the root of the current folder with the following variables
 
 ```
 vpc_cidr_block =
@@ -22,6 +22,9 @@ env_profix =
 my_ip_address =
 instance_type =
 public_key_location  =
+private_key_location =
+
+aws_ami_image =
 ```
 
 2-configure aws credentials with specified region and access_id and secret_key
